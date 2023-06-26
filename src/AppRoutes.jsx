@@ -1,6 +1,10 @@
+import HomeLayout from "./Layouts/HomeLayout";
 import Layout from "./Layouts/Layout";
 import App from "./pages/App";
+import Dashboard from "./pages/Dashboard";
 import NotFoundPage from "./pages/NotFoundPage";
+import Search from "./pages/Search";
+import Result from "./pages/Result";
 
 const AppRoutes = [
   {
@@ -10,6 +14,24 @@ const AppRoutes = [
       {
         path: "/",
         element: <App />,
+      },
+    ],
+  },
+  {
+    path: "/",
+    element: <HomeLayout />,
+    children: [
+      {
+        path: "/dashboard",
+        element: <Dashboard />,
+      },
+      {
+        path: "/search",
+        element: <Search />,
+      },
+      {
+        path: "/result",
+        element: <Result />,
       },
     ],
   },
